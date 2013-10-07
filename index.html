@@ -4,49 +4,57 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Craig Cabrey">
-        
+
         <!-- CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.css" rel="stylesheet" />
         <link href="css/component.css" rel="stylesheet" />
         <link href="css/hue-web.css" rel="stylesheet" />
-        
+
         <title>
             HUE Web
         </title>
     </head>
-    <body>
+<body>
 	<!-- Page Wrapper-->
-	<div class="container">
-	        <!-- Navbar -->
-        	<div class="container navbar-hue-container">
-            		<div class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-fixed-top-hue">
-                		<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">
-							<img src="img/hue-logo.png" height="20" alt="HUE Web" />
-						</a>
-					</div>
-					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li class="active">
-								<a href="#">Home</a>
-							</li>
-							<li>
-								<a href="#about">About</a>
-							</li>
-							<li>
-								<a href="#contact">Contact</a>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="container navbar-hue-container">
+            <div class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-fixed-top-hue">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="img/hue-logo.png" height="20" alt="HUE Web" />
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#about">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact">
+                                    Contact
+                                </a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#settings">Help</a>
+                                <a href="#settings">
+                                    Help
+                                </a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -54,10 +62,20 @@
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Settings</a></li>
+                                    <li>
+                                        <a href="#">
+                                            Settings
+                                        </a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li class="dropdown-header">Actions</li>
-                                    <li><a href="#">Log Out</a></li>
+                                    <li class="dropdown-header">
+                                        Actions
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Log Out
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,53 +83,59 @@
                 </div>
             </div>
         </div>
-        
-	<!-- Login Modal -->
-        <div class="md-modal md-effect-12" id="modal-12">
-		<div class="md-content">
-			<h3>Modal Dialog</h3>
-			<div>
-				<p>This is a modal window. You can do the following things with it:</p>
-				<ul>
-					<li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-					<li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-					<li><strong>Close:</strong> click on the button below to close the modal.</li>
-				</ul>
-				<button class="md-close btn btn-primary">Close me!</button>
-			</div>
-		</div>
-	</div>
-	
-        <!-- Bridge Selection -->
-        <div class="container col-md-2 col-md-offset-5">
-            <div class="well" data-bind="visible: bridges().length > 1">        
-                <legend>
-                    Select a Bridge
-                </legend>
-                <div class="list-group" data-bind="foreach: bridges">
-                    <a href="#" class="list-group-item">
-                        <span data-bind="text: internalipaddress"></span>
-                        <span class="glyphicon glyphicon-circle-arrow-right pull-right"></span>
-                    </a>
+
+            <!-- Login Modal -->
+            <div class="md-modal md-effect-12" id="modal-12">
+              <div class="md-content">
+                 <h3>Modal Dialog</h3>
+                 <div>
+                    <p>This is a modal window. You can do the following things with it:</p>
+                    <ul>
+                            <li>
+                                <strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.
+                            </li>
+                            <li>
+                                <strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.
+                            </li>
+                            <li>
+                                <strong>Close:</strong> click on the button below to close the modal.
+                            </li>
+                        </ul>
+                        <button class="md-close btn btn-primary">Close me!</button>
+                    </div>
                 </div>
             </div>
-	</div>
-	        <button class="md-trigger" data-modal="modal-12">Just Me</button>
-	</div>
+
+            <!-- Bridge Selection -->
+            <div class="container col-md-2 col-md-offset-5">
+                <div class="well" data-bind="visible: bridges().length > 1">        
+                    <legend>
+                        Select a Bridge
+                    </legend>
+                    <div class="list-group" data-bind="foreach: bridges">
+                        <a href="#" class="list-group-item">
+                            <span data-bind="text: internalipaddress"></span>
+                            <span class="glyphicon glyphicon-circle-arrow-right pull-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="md-trigger" data-modal="modal-12">Just Me</button>
+        </div>
         <div class="md-overlay"></div><!-- the overlay element -->
-        
+
         <!-- Javascript -->
         <script src="js/jquery-2.0.3.js" type="application/javascript"></script>
         <script src="js/knockout-2.3.0.js" type="application/javascript"></script>
         <script src="js/bootstrap.js" type="application/javascript"></script>
-	<script src="js/classie.js" type="application/javascript"></script>
-	<script src="js/modalEffects.js" type="application/javascript"></script>
+        <script src="js/classie.js" type="application/javascript"></script>
+        <script src="js/modalEffects.js" type="application/javascript"></script>
         <script>
-			// this is important for IEs
-			var polyfilter_scriptpath = '/js/';
-	</script>
+            // this is important for IEs
+            var polyfilter_scriptpath = '/js/';
+        </script>
         <script src="js/cssParser.js"></script>
-	<script src="js/css-filters-polyfill.js"></script>
+        <script src="js/css-filters-polyfill.js"></script>
         <script src="js/hue-web.js" type="application/javascript"></script>
     </body>
 </html>
