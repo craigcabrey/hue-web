@@ -68,7 +68,7 @@ perspective effects (not including the modals and the overlay).
 /* Content styles */
 .md-content {
 	color: #fff;
-	background: black;
+	background: rgb(168,168,168);
 	position: relative;
 	border-radius: 3px;
 	margin: 0 auto;
@@ -104,12 +104,6 @@ perspective effects (not including the modals and the overlay).
 
 .md-content > div ul li {
 	padding: 5px 0;
-}
-
-.md-content button {
-	display: block;
-	margin: 0 auto;
-	font-size: 0.8em;
 }
 
 /* Individual modal styles with animations/transitions */

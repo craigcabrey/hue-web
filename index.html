@@ -16,7 +16,7 @@
         </title>
     </head>
     <body>
-    	<!-- Page Wrapper-->
+    	<!-- Content Wrapper-->
         <div class="container">
 
             <!-- Navbar -->
@@ -73,14 +73,16 @@
                                             Actions
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="#" onclick="logout()">
                                                 Log Out
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li data-bind="visible: !user.loggedIn()">
-                                    <a href="#" class="md-trigger" data-modal="modal-12">Login</button>
+                                    <a id="loginButton" href="#" class="md-trigger" data-modal="modal-12">
+                                        Login
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -109,23 +111,25 @@
             <div class="md-content">
                 <h3>Authentication Required</h3>
                 <div class="container">
-                    <div class="row col-lg-8 col-lg-offset-2">
-                        <div class="form-group">
+                    <div class="well col-lg-8 col-lg-offset-2">
+                    <div class="row">
+                        <div class="form-group col-lg-10 col-lg-offset-1">
                             <input type="text" class="form-control" id="userName" placeholder="Username" />
                         </div>
                     </div>
-                    <div class="row col-lg-8 col-lg-offset-2">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="password" placeholder="Password" />
+                    <div class="row">
+                        <div id="userPasswordContainer" class="form-group col-lg-10 col-lg-offset-1">
+                            <input type="password" class="form-control" id="userPassword" placeholder="Password" />
                         </div>
                     </div>
-                    <div class="row col-lg-10 col-lg-offset-7">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary col-lg-3">
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <button type="button" class="btn btn-primary col-lg-12" onclick= "login()">
                                 Login
                             </button>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
