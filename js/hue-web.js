@@ -9,10 +9,18 @@ var ViewModel = function(data) {
 var UserViewModel = function(data) {
     var self = this;
     
-    self.firstName = ko.observable(data.firstName);
-    self.lastName = ko.observable(data.lastName);
+    if (typeof(data) === 'undefined') {
+        self.firstName = ko.observable("");
+        self.lastName = ko.observable("");
+        self.loggedIn = ko.observable(false);
+    } else {
+        self.firstName = ko.observable(data.firstName);
+        self.lastName = ko.observable(data.lastName);
+        self.loggedIn = ko.observable(true);
+    }
+
     self.fullName = ko.computed(function() {
-        return self.firstName() + " " + self.lastName();
+            return self.firstName() + " " + self.lastName();
     });
 };
 

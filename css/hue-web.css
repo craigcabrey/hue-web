@@ -9,4 +9,5 @@ body {
 .navbar-fixed-top-hue {
     border-radius: 3px;
     position: relative;
+    z-index: 1000;
 }

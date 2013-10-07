@@ -22,9 +22,7 @@ server.get('/api/bridges', function(req, res) {
 
 			resp.on('end', function() {
 				var result = {};
-				result['user'] = {
-				};
-
+				
 				result['bridges'] = JSON.parse(output);
 				res.send(JSON.stringify(result));
 			});
