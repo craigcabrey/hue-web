@@ -16,30 +16,32 @@
         </title>
     </head>
     <body>
-        <!-- Navbar -->
-        <div class="container navbar-hue-container">
-            <div class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-fixed-top-hue">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">
-                            <img src="img/hue-logo.png" height="20" alt="HUE Web" />
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
+	<!-- Page Wrapper-->
+	<div class="container">
+	        <!-- Navbar -->
+        	<div class="container navbar-hue-container">
+            		<div class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-fixed-top-hue">
+                		<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">
+							<img src="img/hue-logo.png" height="20" alt="HUE Web" />
+						</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#about">About</a>
+							</li>
+							<li>
+								<a href="#contact">Contact</a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -64,24 +66,23 @@
             </div>
         </div>
         
-        <!-- Content -->
-        <!-- Bridge Selection -->
-        <button class="md-trigger btn btn-default" data-modal="modal-12">Just Me</button>
-        
+	<!-- Login Modal -->
         <div class="md-modal md-effect-12" id="modal-12">
-			<div class="md-content">
-				<h3>Modal Dialog</h3>
-				<div>
-					<p>This is a modal window. You can do the following things with it:</p>
-					<ul>
-						<li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-						<li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-						<li><strong>Close:</strong> click on the button below to close the modal.</li>
-					</ul>
-					<button class="md-close">Close me!</button>
-				</div>
+		<div class="md-content">
+			<h3>Modal Dialog</h3>
+			<div>
+				<p>This is a modal window. You can do the following things with it:</p>
+				<ul>
+					<li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+					<li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+					<li><strong>Close:</strong> click on the button below to close the modal.</li>
+				</ul>
+				<button class="md-close btn btn-primary">Close me!</button>
 			</div>
 		</div>
+	</div>
+	
+        <!-- Bridge Selection -->
         <div class="container col-md-2 col-md-offset-5">
             <div class="well" data-bind="visible: bridges().length > 1">        
                 <legend>
@@ -94,20 +95,23 @@
                     </a>
                 </div>
             </div>
-        </div>
-        
+	</div>
+	        <button class="md-trigger" data-modal="modal-12">Just Me</button>
+	</div>
         <div class="md-overlay"></div><!-- the overlay element -->
         
         <!-- Javascript -->
         <script src="js/jquery-2.0.3.js" type="application/javascript"></script>
         <script src="js/knockout-2.3.0.js" type="application/javascript"></script>
         <script src="js/bootstrap.min.js" type="application/javascript"></script>
+	<script src="js/classie.js" type="application/javascript"></script>
+	<script src="js/modalEffects.js" type="application/javascript"></script>
         <script>
 			// this is important for IEs
 			var polyfilter_scriptpath = '/js/';
-		</script>
+	</script>
         <script src="js/cssParser.js"></script>
-		<script src="js/css-filters-polyfill.js"></script>
+	<script src="js/css-filters-polyfill.js"></script>
         <script src="js/hue-web.js" type="application/javascript"></script>
     </body>
 </html>

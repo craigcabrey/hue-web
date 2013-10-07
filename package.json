@@ -1,0 +1,9 @@
+{
+  "name": "hue-web",
+  "description": "A web interface for the Philips HUE lighting system.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  }
+}
