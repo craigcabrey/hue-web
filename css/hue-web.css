@@ -1,0 +1,12 @@
+body {
+    background-image: url('../img/background.png');
+}
+
+.navbar-hue-container {
+    padding-top: 20px;
+}
+
+.navbar-fixed-top-hue {
+    border-radius: 3px;
+    position: relative;
+}
