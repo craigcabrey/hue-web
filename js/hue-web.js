@@ -7,6 +7,10 @@ var ViewModel = function(data) {
     self.user = new UserViewModel(data.user);
     self.bridges = ko.observable(data.bridges);
     self.selectedBridge = ko.observable(self.bridges().length === 1 ? self.bridges()[0] : null);
+
+    self.selectedBridge.subscribe(function(value) {
+        console.log(value);
+    });
 };
 
 /**
@@ -26,7 +30,7 @@ var UserViewModel = function(data) {
     }
 
     self.fullName = ko.computed(function() {
-            return self.firstName() + " " + self.lastName();
+        return self.firstName() + " " + self.lastName();
     });
 };
 
@@ -44,17 +48,14 @@ var BridgeViewModel = function(data) {
  * Initial check to see if we're authenticated when we
  * first load the static page.
  */
-$(document).ready(function() {
-    $.ajax({
-        type: 'GET',
-        url: '/login',
-        success: function(result) {
-            if (result['state'] != '0') {
-                var modal = document.querySelector('#modal-12');
-                classie.add(modal, 'md-show');
-            }
+$.ajax({
+    type: 'GET',
+    url: '/login',
+    success: function(result) {
+        if (result['state'] != '0') {
+            toggleLogin(true);
         }
-    });
+    }
 });
 
 /**
@@ -71,10 +72,7 @@ function login() {
         success: function(result) {
             var resultObj = JSON.parse(result);
             if (resultObj['state'] === '0') {
-                var modal = document.querySelector('#modal-12');
-                classie.remove(modal, 'md-show');
-                $('#userName').val('');
-                $('#userPassword').val('');
+                toggleLogin(false);
                 loadInitial();
             } else {
                 $('#userPasswordContainer').addClass('has-error');
@@ -102,6 +100,8 @@ function logout() {
     });
 }
 
+var viewModel;
+
 /**
  * Client side JavaScript load initial state function.
  */
@@ -110,9 +110,29 @@ function loadInitial() {
         type: 'GET',
         url: '/api/initial',
         success: function(result) {
-            console.log(result);
-            ko.applyBindings(new ViewModel(JSON.parse(result)));
+            result = JSON.parse(result);
+            
+            if (result['state'] != '0') {
+                toggleLogin(true);
+            } else {
+                viewModel = new ViewModel(result);
+                ko.applyBindings(viewModel);
+            }
         }
     });
-};
+}
 
+/**
+ * Helper function to toggle showing the login modal.
+ */
+function toggleLogin(showLogin) {
+    var modal = document.querySelector('#modal-12');
+
+    if (showLogin) {
+        classie.add(modal, 'md-show');
+    } else {
+        classie.remove(modal, 'md-show');
+        $('#userName').val('');
+        $('#userPassword').val('');
+    }
+}
