@@ -136,3 +136,19 @@ function toggleLogin(showLogin) {
         $('#userPassword').val('');
     }
 }
+
+/**
+ * TODO: CRAIG DOCUMENT
+ */
+$(document).ready(function () {
+    // Set username text field highlighted upon startup
+    $('#userName').focus();
+
+    // Set login button binding to enter button
+    $('#userPassword').keyup(function(event) {
+        if(event.keyCode == 13) {
+            console.log('you press enter');
+            $('#loginButton').click();
+        }
+    })
+});

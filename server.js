@@ -43,7 +43,7 @@ server.get('/login', function(req, res) {
  * to verify.
  */
 server.post('/login', function(req, res) {
-    if (req.body.userName == 'craigcabrey' && req.body.userPassword == 'password') {
+    if (req.body.userName == 'datto' && req.body.userPassword == 'datto') {
         result['state'] = '0';
         req.session.user_id = '1234567890';
     } else {

@@ -80,7 +80,7 @@
                                     </ul>
                                 </li>
                                 <li data-bind="visible: !user.loggedIn()">
-                                    <a id="loginButton" href="#" class="md-trigger" data-modal="modal-12">
+                                    <a href="#" class="md-trigger" data-modal="modal-12">
                                         Login
                                     </a>
                                 </li>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <button type="button" class="btn btn-primary col-lg-12" onclick= "login()">
+                            <button type="button" id="loginButton" class="btn btn-primary col-lg-12" onclick= "login()">
                                 Login
                             </button>
                         </div>
