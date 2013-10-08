@@ -3,6 +3,11 @@ hue-web
 
 A web interface for the Philips HUE lighting system.
 
+Built with:
+* Bootstrap 3
+* Node.js
+* Express
+
 # License
     Copyright (c) 2013, Craig Cabrey
     All rights reserved.
