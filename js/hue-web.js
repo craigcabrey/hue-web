@@ -92,8 +92,8 @@ function logout() {
         url: '/logout',
         success: function(result) {
             var resultObj = JSON.parse(result);
-
-            if (resultObj['state'] === 'success') {
+            console.log(resultObj);
+            if (resultObj['state'] === '0') {
                 location.reload();
             }
         }

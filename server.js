@@ -30,6 +30,8 @@ var result = {
 server.get('/login', function(req, res) {
     if (!req.session.user_id) {
         result['state'] = '1';
+    } else {
+        result['state'] = '0';
     }
 
     res.send(JSON.stringify(result));
@@ -40,13 +42,15 @@ server.get('/login', function(req, res) {
  * to authorize themselves by supplying credentials for the server
  * to verify.
  */
-server.post('/login', function(req, res) {   
+server.post('/login', function(req, res) {
     if (req.body.userName == 'craigcabrey' && req.body.userPassword == 'password') {
+        result['state'] = '0';
         req.session.user_id = '1234567890';
     } else {
         result['state'] = '1';
     }
 
+    console.log(result);
     res.send(JSON.stringify(result));
 });
 
@@ -55,6 +59,9 @@ server.post('/login', function(req, res) {
  */
 server.post('/logout', function(req, res) {
     req.session = null;
+    result = {
+        state: '0'
+    };
     res.send(JSON.stringify(result));
 });
 
@@ -107,7 +114,7 @@ server.post('/api/:bridge/all_off', checkAuth, function(req, res) {
                                 path: '/api' + app.get('api_key') + '/lights/' + light
                             },
                             function(resp) {
-                                
+
                             }
                         );
                     }
